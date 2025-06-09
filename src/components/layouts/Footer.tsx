@@ -13,6 +13,9 @@ const Footer = () => {
         <br />
         앞으로 나아갈 수 있는 공간으로 만들어졌습니다.
       </p>
+      <p className="copyright">
+        Data has been <br /> created since 2025.
+      </p>
     </FooterStyle>
   );
 };
@@ -23,6 +26,13 @@ const FooterStyle = styled.div`
   margin-left: 480px;
   align-items: center;
   justify-content: space-between;
+
+  .copyright {
+    width: 114px;
+    height: 44px;
+    margin-left: auto;
+    justify-content: space-between;
+  }
 `;
 
 export default Footer;
