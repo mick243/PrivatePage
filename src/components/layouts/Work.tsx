@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ThemeProvider } from "styled-components";
 
 const Work = () => {
   return (

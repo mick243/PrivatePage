@@ -1,4 +1,9 @@
-export type Class = "front" | "back" | "full";
-export type ThemeName = "light" | "dark";
+// const theme:
+//   color: {
+//     front: `#FF4ED9`
+//     back: `#52FF77`
+//     full: `#25D0FF`
+//   },
+// };
 
-interface Props {}
+// export default theme;
