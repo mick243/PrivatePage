@@ -12,33 +12,43 @@ const Header = () => {
     navigate(`/About`);
   };
   const handleWorkClick = () => {
-    navigate("/");
+    navigate("/Work");
   };
   const handleArticleClick = () => {
-    navigate("/");
+    navigate("/Article");
   };
   const handleContactClick = () => {
-    navigate("/");
+    navigate("/Contact");
   };
 
   return (
     <HeaderStyle>
-      <p className="logo" onClick={handleLogoClick}>
-        &lt; LOG
-      </p>
-      <div className="menu">
-        <p className="about" onClick={handleAboutClick}>
-          About
+      <div>
+        <p className="logo" onClick={handleLogoClick}>
+          &lt; LOG
         </p>
-        <p className="work" onClick={handleWorkClick}>
-          Work
-        </p>
-        <p className="article" onClick={handleArticleClick}>
-          Article
-        </p>
-        <p className="contact" onClick={handleContactClick}>
-          Contact
-        </p>
+        <ul className="menu">
+          <li>
+            <p className="about" onClick={handleAboutClick}>
+              About
+            </p>
+          </li>
+          <li>
+            <p className="work" onClick={handleWorkClick}>
+              Work
+            </p>
+          </li>
+          <li>
+            <p className="article" onClick={handleArticleClick}>
+              Article
+            </p>
+          </li>
+          <li>
+            <p className="contact" onClick={handleContactClick}>
+              Contact
+            </p>
+          </li>
+        </ul>
       </div>
     </HeaderStyle>
   );
@@ -52,7 +62,7 @@ const HeaderStyle = styled.div`
   justify-content: space-between;
 
   .logo {
-    width: 45px;
+    width: 50px;
     margin-top: 40px;
     cursor: pointer;
   }
@@ -61,23 +71,30 @@ const HeaderStyle = styled.div`
     width: 301px;
     height: 26px;
     margin-left: auto;
-    margin-top: -38px;
+    margin-top: -55px;
     justify-content: space-between;
+
+    li {
+      display: inline-block;
+    }
 
     .about {
       width: 43px;
     }
 
     .work {
-      width: 43px;
+      width: 37px;
+      margin-left: 40px;
     }
 
     .article {
-      width: 43px;
+      width: 45px;
+      margin-left: 40px;
     }
 
     .contact {
-      width: 43px;
+      width: 56px;
+      margin-left: 40px;
     }
 
     p: hover {
