@@ -24,6 +24,10 @@ const About = () => {
   );
 };
 
-const AboutStyle = styled.div``;
+const AboutStyle = styled.div`
+  p {
+    color: #ffffff;
+  }
+`;
 
 export default About;

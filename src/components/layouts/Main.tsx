@@ -30,20 +30,27 @@ const Main = () => {
 const MainStyle = styled.div`
   margin-left: 480px;
 
+  p {
+    color: #ffffff;
+  }
+
   .top-bar {
     width: 960px;
     margin-left: -1px;
+    color: #ffffff;
     position: relative;
   }
 
   .bottom-bar {
     width: 960px;
+    color: #ffffff;
     margin-left: -1px;
   }
 
   .main-title {
     weight: 697px;
     height: 334px;
+    color: #ffffff;
     font-size: 240px;
     justify-content: space-between;
   }

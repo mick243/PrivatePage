@@ -1,4 +1,5 @@
 import Header from "./Header";
+import styled from "styled-components";
 import Footer from "./Footer";
 
 interface LayoutProps {
@@ -13,5 +14,4 @@ const Layout = ({ children }: LayoutProps) => {
     </>
   );
 };
-
 export default Layout;

@@ -23,6 +23,8 @@ const Footer = () => {
 const FooterStyle = styled.div`
   width: 960px;
   height: 90px;
+  color: #ffffff;
+  position: center;
   margin-left: 480px;
   align-items: center;
   justify-content: space-between;

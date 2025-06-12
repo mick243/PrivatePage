@@ -65,6 +65,7 @@ const HeaderStyle = styled.div`
     width: 50px;
     margin-top: 40px;
     cursor: pointer;
+    color: #ffffff;
   }
 
   .menu {
@@ -80,21 +81,25 @@ const HeaderStyle = styled.div`
 
     .about {
       width: 43px;
+      color: #ffffff;
     }
 
     .work {
       width: 37px;
       margin-left: 40px;
+      color: #ffffff;
     }
 
     .article {
       width: 45px;
       margin-left: 40px;
+      color: #ffffff;
     }
 
     .contact {
       width: 56px;
       margin-left: 40px;
+      color: #ffffff;
     }
 
     p: hover {
