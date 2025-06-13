@@ -19,6 +19,10 @@ const Contact = () => {
   );
 };
 
-const ContactStyle = styled.div``;
+const ContactStyle = styled.div`
+  p {
+    color: #ffffff;
+  }
+`;
 
 export default Contact;

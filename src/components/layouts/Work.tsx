@@ -18,6 +18,25 @@ const Work = () => {
   );
 };
 
-const WorkStyle = styled.div``;
+const WorkStyle = styled.div`
+  button {
+    width: 97px;
+    height: 44px;
+    border-radius: 40px;
+    color: #ffffff;
+    border: 1px solid #494f60;
+    background-color: #010104;
+    cursor: pointer;
+
+    &: hover {
+      background-color: #ffffff;
+      color: #010104;
+    }
+  }
+
+  p {
+    color: #ffffff;
+  }
+`;
 
 export default Work;
