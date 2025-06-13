@@ -30,9 +30,11 @@ const FooterStyle = styled.div`
   justify-content: space-between;
 
   .copyright {
-    width: 114px;
+    width: 150px;
     height: 44px;
+    text-align: right;
     margin-left: auto;
+    margin-top: -55px;
     justify-content: space-between;
   }
 `;

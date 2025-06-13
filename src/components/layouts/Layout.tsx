@@ -1,6 +1,5 @@
 import Header from "./Header";
 import styled from "styled-components";
-import Footer from "./Footer";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -9,9 +8,30 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <>
-      <Header />
-      {children}
+      <BackgroundVideo autoPlay loop muted playsInline>
+        <source src="/videos/log.mp4" type="video/mp4" />
+      </BackgroundVideo>
+      <ContentWrapper>
+        <Header />
+        {children}
+      </ContentWrapper>
     </>
   );
 };
+
+const BackgroundVideo = styled.video`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+`;
+
+const ContentWrapper = styled.div`
+  position: relative;
+  z-index: 1;
+`;
+
 export default Layout;

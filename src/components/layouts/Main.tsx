@@ -21,6 +21,9 @@ const Main = () => {
           <br />
           as a developer and move forward.
         </p>
+        <BackgroundVideo autoPlay loop muted playsInline>
+          <source src="/videos/log.mp4" type="video/mp4" />
+        </BackgroundVideo>
       </MainStyle>
       <Footer />
     </>
@@ -54,6 +57,16 @@ const MainStyle = styled.div`
     font-size: 240px;
     justify-content: space-between;
   }
+`;
+
+const BackgroundVideo = styled.video`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 `;
 
 export default Main;
