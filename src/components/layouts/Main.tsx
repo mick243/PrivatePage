@@ -7,8 +7,8 @@ const Main = () => {
     <>
       <Header />
       <MainStyle>
-        <p>&lt; home</p>
-        <p>
+        <p className="home">&lt;home</p>
+        <p className="first-word">
           Hello!
           <br />
           Welcome to the Full Stack Developer Studio.
@@ -16,7 +16,7 @@ const Main = () => {
         <hr className="top-bar"></hr>
         <p className="main-title">&lt; LOG</p>
         <hr className="bottom-bar"></hr>
-        <p>
+        <p className="last-word">
           The log where the class started was created as a space to contain life
           <br />
           as a developer and move forward.
@@ -31,15 +31,30 @@ const Main = () => {
 };
 
 const MainStyle = styled.div`
+  margin-top: 89px;
   margin-left: 480px;
+  height: 802px;
 
   p {
     color: #ffffff;
   }
 
+  .home {
+    color: #5398ff;
+  }
+
+  .first-word {
+    margin-top: 40px;
+  }
+
+  .last-word {
+    margin-top: 20px;
+  }
+
   .top-bar {
     width: 960px;
     margin-left: -1px;
+    margin-top: 25px;
     color: #ffffff;
     position: relative;
   }
@@ -52,7 +67,9 @@ const MainStyle = styled.div`
 
   .main-title {
     weight: 697px;
-    height: 334px;
+    height: 134px;
+    margin-left: 100px;
+    margin-top: 0px;
     color: #ffffff;
     font-size: 240px;
     justify-content: space-between;
@@ -64,7 +81,7 @@ const BackgroundVideo = styled.video`
   top: 215px;
   left: -79px;
   width: 1865px;
-  height: 1049px;
+  height: 1040px;
   object-fit: cover;
   filter: blur(8px);
   z-index: -1;

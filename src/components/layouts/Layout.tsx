@@ -24,7 +24,7 @@ const BackgroundVideo = styled.video`
   top: 215px;
   left: -79px;
   width: 1865px;
-  height: 1049px;
+  height: 1040px;
   object-fit: cover;
   filter: blur(8px);
   z-index: -1;

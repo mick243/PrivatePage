@@ -56,15 +56,16 @@ const Header = () => {
 
 const HeaderStyle = styled.div`
   width: 960px;
-  height: 90px;
+  height: 60px;
   margin-left: 480px;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #2f333a;
 
   .logo {
     width: 50px;
-    margin-top: 40px;
     cursor: pointer;
+    margin-top: 40px;
     color: #ffffff;
   }
 

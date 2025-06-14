@@ -22,7 +22,7 @@ const Footer = () => {
 
 const FooterStyle = styled.div`
   width: 960px;
-  height: 90px;
+  height: 50px;
   color: #ffffff;
   position: center;
   margin-left: 480px;
