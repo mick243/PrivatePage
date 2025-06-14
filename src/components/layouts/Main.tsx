@@ -60,12 +60,13 @@ const MainStyle = styled.div`
 `;
 
 const BackgroundVideo = styled.video`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 215px;
+  left: -79px;
+  width: 1865px;
+  height: 1049px;
   object-fit: cover;
+  filter: blur(8px);
   z-index: -1;
 `;
 
