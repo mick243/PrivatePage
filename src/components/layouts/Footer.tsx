@@ -29,12 +29,26 @@ const FooterStyle = styled.div`
   align-items: center;
   justify-content: space-between;
 
+  p {
+    font-family: Pretendard;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: -0.3px;
+    color: #ffffff;
+  }
+
   .copyright {
     width: 150px;
     height: 44px;
     text-align: right;
     margin-left: auto;
     margin-top: -55px;
+    font-family: Pretendard;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: -0.5px;
     justify-content: space-between;
   }
 `;

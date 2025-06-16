@@ -66,6 +66,11 @@ const HeaderStyle = styled.div`
     width: 50px;
     cursor: pointer;
     margin-top: 40px;
+    font-family: Pretendard;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -0.5px;
     color: #ffffff;
   }
 
@@ -74,6 +79,11 @@ const HeaderStyle = styled.div`
     height: 26px;
     margin-left: auto;
     margin-top: -55px;
+    font-family: Pretendard;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -0.5px;
     justify-content: space-between;
 
     li {

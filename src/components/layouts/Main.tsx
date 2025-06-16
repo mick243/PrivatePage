@@ -40,15 +40,30 @@ const MainStyle = styled.div`
   }
 
   .home {
+    font-family: Pretendard;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -0.5px;
     color: #5398ff;
   }
 
   .first-word {
     margin-top: 40px;
+    font-family: Pretendard;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -0.5px;
   }
 
   .last-word {
     margin-top: 20px;
+    font-family: Pretendard;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -0.5px;
   }
 
   .top-bar {
@@ -71,7 +86,11 @@ const MainStyle = styled.div`
     margin-left: 100px;
     margin-top: 0px;
     color: #ffffff;
+    font-family: Pretendard;
+    font-weight: 700;
     font-size: 240px;
+    line-height: 140%;
+    letter-spacing: -0.5px;
     justify-content: space-between;
   }
 `;
