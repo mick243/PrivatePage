@@ -14,6 +14,12 @@ const Work = () => {
       <button>front-end</button>
       <button>back-end</button>
       <button>full-stack</button>
+      <BoardStyle>
+        <p>ㅇㅇㅇㅇ</p>
+      </BoardStyle>
+      {/* <p className="fe">&lt;front-end</p>
+      <p className="be">&lt;back-end</p>
+      <p className="fs">&lt;full-stack</p> */}
     </WorkStyle>
   );
 };
@@ -86,6 +92,12 @@ const WorkStyle = styled.div`
   p {
     color: #ffffff;
   }
+`;
+const BoardStyle = styled.div`
+  width: 960px;
+  height: 210px;
+  border: 1px solid;
+  margin-left: 480px;
 `;
 
 export default Work;

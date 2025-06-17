@@ -49,6 +49,8 @@ const MainStyle = styled.div`
   }
 
   .first-word {
+    min-width: 300px;
+    min-height: 50px;
     margin-top: 40px;
     font-family: Pretendard;
     font-weight: 400;
@@ -58,6 +60,8 @@ const MainStyle = styled.div`
   }
 
   .last-word {
+    min-width: 470px;
+    min-height: 50px;
     margin-top: 20px;
     font-family: Pretendard;
     font-weight: 400;
@@ -81,7 +85,7 @@ const MainStyle = styled.div`
   }
 
   .main-title {
-    weight: 697px;
+    min-width: 697px;
     height: 134px;
     margin-left: 100px;
     margin-top: 0px;

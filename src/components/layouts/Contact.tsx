@@ -1,10 +1,16 @@
 import styled from "styled-components";
+import { FaGithubSquare } from "react-icons/fa";
+import Footer2 from "./Footer2";
 
 const Contact = () => {
+  const newPageGithub = () => {
+    window.open("https://github.com/mick243");
+  };
+  console.log(FaGithubSquare);
   return (
     <ContactStyle>
       <p className="head">&lt; contact</p>
-      <p>
+      <p className="head-word">
         Hello! <br />
         Welcome to the Full Stack Developer Studio
       </p>
@@ -12,28 +18,16 @@ const Contact = () => {
       <p className="adress">블로그 주소</p>
       <p className="adress">깃허브 주소</p>
       <hr className="bar"></hr>
-      <footer>
-        <p className="last-word1">
-          안녕하세요.
-          <br />
-          풀스택 개발자 강정민의 스튜디오입니다.
-        </p>
-        <p className="last-word2">
-          문의사항은 위 연락처를 통해 부탁드립니다.
-          <br />
-          감사합니다.
-        </p>
-        <p className="copyright">
-          Data has been
-          <br />
-          created since 2025.
-        </p>
-      </footer>
+      <Footer2></Footer2>
     </ContactStyle>
   );
 };
 
 const ContactStyle = styled.div`
+  min-width: 1920px;
+  margin: 0 auto;
+  padding: 0 20px;
+
   .head {
     color: #5398ff;
     margin-left: 480px;
@@ -44,12 +38,13 @@ const ContactStyle = styled.div`
     line-height: 160%;
     letter-spacing: -0.5px;
   }
-  p {
+  .head-word {
     margin-left: 480px;
     color: #ffffff;
   }
 
   .adress {
+    margin-left: 480px;
     color: #ffffff;
     text-align: left;
   }
@@ -59,20 +54,6 @@ const ContactStyle = styled.div`
     margin-left: 480px;
     margin-top: 25px;
     color: #ffffff;
-  }
-
-  .copyright {
-    width: 150px;
-    height: 44px;
-    margin-left: auto;
-    margin-right: 395px;
-    margin-top: -55px;
-    font-family: Pretendard;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 160%;
-    letter-spacing: -0.5px;
-    justify-content: space-between;
   }
 `;
 
