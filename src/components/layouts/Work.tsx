@@ -83,7 +83,7 @@ const WorkStyle = styled.div`
     letter-spacing: -0.4px;
     text-align: center;
 
-    &: hover {
+    &:hover {
       background-color: #ffffff;
       color: #010104;
     }

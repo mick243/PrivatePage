@@ -23,6 +23,7 @@ const Footer2 = () => {
 const FooterStyle = styled.div`
   width: 960px;
   height: 50px;
+  margin-top: 150px;
   color: #ffffff;
   position: center;
   margin-left: 480px;

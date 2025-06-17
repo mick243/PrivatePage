@@ -28,11 +28,22 @@ const BackgroundVideo = styled.video`
   object-fit: cover;
   filter: blur(8px);
   z-index: -1;
+
+  @media (max-width: 375px) {
+    width: 375px;
+    object-fit: cover;
+    filter: blur(8px);
+    z-index: -1;
+  }
 `;
 
 const ContentWrapper = styled.div`
   position: relative;
   z-index: 1;
+
+  @media (max-width: 375px) {
+    max-width: 375px;
+  }
 `;
 
 export default Layout;

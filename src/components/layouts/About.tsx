@@ -20,6 +20,16 @@ const About = () => {
         풀스택 개발자 강정민의 스튜디오입니다.
       </p>
       <p className="skill">&lt; skills</p>
+      <p className="logo">
+        <img
+          className="js-logo"
+          src="/logos/478d85330087acd75c9ffa664f61071c-ezgif.com-resize.png"
+        />
+        <img
+          className="react-logo"
+          src="/logos/73b62ecb842808ecfc6d021f07c34414-ezgif.com-resize.png"
+        />
+      </p>
       <footer className="footer">
         <p>Data has been created since 2025.</p>
       </footer>
@@ -28,6 +38,8 @@ const About = () => {
 };
 
 const AboutStyle = styled.div`
+  width: 1920px;
+
   p {
     color: #ffffff;
     font-family: Pretendard;
@@ -96,6 +108,20 @@ const AboutStyle = styled.div`
     font-size: 16px;
     line-height: 160%;
     letter-spacing: -0.5px;
+  }
+
+  .logo {
+    min-width: 480px;
+    min-height: 90px;
+    height: 90px;
+    margin-left: 760px;
+    margin-top: 35px;
+  }
+
+  .react-logo {
+    margin-left: auto;
+    padding-left: 47px;
+    justify-content: space-between;
   }
 `;
 

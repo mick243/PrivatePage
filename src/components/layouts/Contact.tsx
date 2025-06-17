@@ -15,10 +15,19 @@ const Contact = () => {
         Welcome to the Full Stack Developer Studio
       </p>
       <hr className="bar"></hr>
-      <p className="adress">블로그 주소</p>
-      <p className="adress">깃허브 주소</p>
+      <p className="adress">kjm3746@gmail.com</p>
+      <p className="adress">
+        https://github.com/mick243
+        <button className="github" onClick={newPageGithub}></button>
+      </p>
       <hr className="bar"></hr>
-      <Footer2></Footer2>
+      <p className="last-word1">
+        This is a spacr to create and store new records of life as a developer.
+        <br />
+        The beginning of new class.
+      </p>
+      <p className="last-word2">This is a space to create and store new</p>
+      <Footer2 />
     </ContactStyle>
   );
 };
@@ -40,19 +49,53 @@ const ContactStyle = styled.div`
   }
   .head-word {
     margin-left: 480px;
+    margin-top: 25px;
     color: #ffffff;
   }
 
   .adress {
     margin-left: 480px;
+    font-family: Pretendard;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 140%;
+    letter-spacing: -0.5px;
     color: #ffffff;
     text-align: left;
+  }
+
+  .github {
+    align-self: flex-end;
+    margin-left: 270px;
+    justify-content: space-between;
   }
 
   .bar {
     width: 960px;
     margin-left: 480px;
     margin-top: 25px;
+    color: #ffffff;
+  }
+
+  .last-word1 {
+    margin-left: 480px;
+    margin-top: 25px;
+    font-family: Pretendard;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+  }
+
+  .last-word2 {
+    margin-left: 480px;
+    margin-top: 25px;
+    font-family: Pretendard;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -0.5px;
     color: #ffffff;
   }
 `;

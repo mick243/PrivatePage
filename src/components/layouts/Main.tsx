@@ -1,8 +1,23 @@
 import styled from "styled-components";
 import Footer from "./Footer";
 import Header from "./Header";
+import { useEffect, useState } from "react";
 
 const Main = () => {
+  const [isSEMobile, setIsSEMobile] = useState<boolean>(
+    () => window.innerWidth <= 375
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsSEMobile(window.innerWidth <= 375);
+    };
+
+    handleResize(); // 초기 설정
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <Header />
@@ -17,9 +32,20 @@ const Main = () => {
         <p className="main-title">&lt; LOG</p>
         <hr className="bottom-bar"></hr>
         <p className="last-word">
-          The log where the class started was created as a space to contain life
-          <br />
-          as a developer and move forward.
+          {isSEMobile ? (
+            <>
+              The log where the class started was created
+              <br />
+              as a space to contain life as a developer and move forward.
+            </>
+          ) : (
+            <>
+              The log where the class started was created as a space to contain
+              life
+              <br />
+              as a developer and move forward.
+            </>
+          )}
         </p>
         <BackgroundVideo autoPlay loop muted playsInline>
           <source src="/videos/log.mp4" type="video/mp4" />

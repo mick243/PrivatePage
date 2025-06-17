@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { media } from "../styles/media";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -117,6 +118,10 @@ const HeaderStyle = styled.div`
       cursor: pointer;
     }
   }
+
+  ${media.phone`
+    width: 300px;
+    .`}
 `;
 
 export default Header;
