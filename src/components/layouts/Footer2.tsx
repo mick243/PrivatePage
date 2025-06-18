@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../styles/media";
 
 const Footer2 = () => {
   return (
@@ -52,6 +53,11 @@ const FooterStyle = styled.div`
     letter-spacing: -0.5px;
     justify-content: space-between;
   }
+  ${media.phoneM`
+    `}
+
+  ${media.tablet`
+    `}
 `;
 
 export default Footer2;

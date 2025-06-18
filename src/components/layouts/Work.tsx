@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../styles/media";
 
 const Work = () => {
   return (
@@ -92,6 +93,12 @@ const WorkStyle = styled.div`
   p {
     color: #ffffff;
   }
+
+  ${media.phoneM`
+    `}
+
+  ${media.tablet`
+    `}
 `;
 const BoardStyle = styled.div`
   width: 960px;

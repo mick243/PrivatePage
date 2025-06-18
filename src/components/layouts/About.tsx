@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../styles/media";
 
 const About = () => {
   return (
@@ -123,6 +124,12 @@ const AboutStyle = styled.div`
     padding-left: 47px;
     justify-content: space-between;
   }
+
+  ${media.phoneM`
+    `}
+
+  ${media.tablet`
+    `}
 `;
 
 export default About;

@@ -119,9 +119,18 @@ const HeaderStyle = styled.div`
     }
   }
 
-  ${media.phone`
-    width: 300px;
-    .`}
+  ${media.phoneM`
+    width: 327px;
+    margin-left: 24px;
+
+    .menu li {
+      display: none;
+    }
+
+    `}
+
+  ${media.tablet`
+    `}
 `;
 
 export default Header;

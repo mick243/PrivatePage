@@ -1,3 +1,4 @@
+import { media } from "../styles/media";
 import Header from "./Header";
 import styled from "styled-components";
 
@@ -41,9 +42,11 @@ const ContentWrapper = styled.div`
   position: relative;
   z-index: 1;
 
-  @media (max-width: 375px) {
-    max-width: 375px;
-  }
+  ${media.phoneM`
+    `}
+
+  ${media.tablet`
+    `}
 `;
 
 export default Layout;

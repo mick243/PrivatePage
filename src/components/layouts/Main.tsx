@@ -2,15 +2,16 @@ import styled from "styled-components";
 import Footer from "./Footer";
 import Header from "./Header";
 import { useEffect, useState } from "react";
+import { media } from "../styles/media";
 
 const Main = () => {
-  const [isSEMobile, setIsSEMobile] = useState<boolean>(
-    () => window.innerWidth <= 375
+  const [isMobile, setIsMobile] = useState<boolean>(
+    () => window.innerWidth <= 600
   );
 
   useEffect(() => {
     const handleResize = () => {
-      setIsSEMobile(window.innerWidth <= 375);
+      setIsMobile(window.innerWidth <= 600);
     };
 
     handleResize(); // 초기 설정
@@ -32,18 +33,20 @@ const Main = () => {
         <p className="main-title">&lt; LOG</p>
         <hr className="bottom-bar"></hr>
         <p className="last-word">
-          {isSEMobile ? (
-            <>
-              The log where the class started was created
-              <br />
-              as a space to contain life as a developer and move forward.
-            </>
-          ) : (
+          {isMobile ? (
             <>
               The log where the class started was created as a space to contain
               life
               <br />
               as a developer and move forward.
+            </>
+          ) : (
+            <>
+              The log where the class started was created
+              <br />
+              as a space to contain life as a developer and
+              <br />
+              move forward.
             </>
           )}
         </p>
@@ -67,7 +70,7 @@ const MainStyle = styled.div`
 
   .home {
     font-family: Pretendard;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
     line-height: 160%;
     letter-spacing: -0.5px;
@@ -79,21 +82,22 @@ const MainStyle = styled.div`
     min-height: 50px;
     margin-top: 40px;
     font-family: Pretendard;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
     line-height: 160%;
     letter-spacing: -0.5px;
   }
 
   .last-word {
-    min-width: 470px;
+    min-width: 375px;
     min-height: 50px;
     margin-top: 20px;
     font-family: Pretendard;
-    font-weight: 400;
+    font-weight: 300;
     font-size: 16px;
     line-height: 160%;
     letter-spacing: -0.5px;
+    white-space: pre-line;
   }
 
   .top-bar {
@@ -123,6 +127,46 @@ const MainStyle = styled.div`
     letter-spacing: -0.5px;
     justify-content: space-between;
   }
+
+  ${media.phoneM`
+    min-width: 375px;
+    max-height: 667px;
+    margin-left: 24px;
+
+    .home {
+      left: 0px;
+    }
+
+    .top-bar {
+      width: 327px;
+    }
+
+    .bottom-bar {
+      width: 327px;
+    }
+
+    .main-title {
+      width: 229ox;
+      height: 90px;
+      margin-left: 40px;
+      margin-top: 50px;
+      font-family: Pretendard;
+      font-weight: 700;
+      font-size: 80px;
+      line-height: 140%;
+      letter-spacing: -0.5px;
+    }
+    
+    .last-word {
+      margin-top: 25px;
+      white-space: pre-line;
+    }
+    
+    `}
+
+  ${media.tablet`
+    width: 1024px;
+    `}
 `;
 
 const BackgroundVideo = styled.video`
@@ -134,6 +178,16 @@ const BackgroundVideo = styled.video`
   object-fit: cover;
   filter: blur(8px);
   z-index: -1;
+
+  ${media.phoneM`
+    width: 600px;
+    left: -160px;
+  `}
+
+  ${media.tablet`
+    width: 1024px;
+    left: 0px;
+  `}
 `;
 
 export default Main;

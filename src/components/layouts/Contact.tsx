@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FaGithubSquare } from "react-icons/fa";
 import Footer2 from "./Footer2";
+import { media } from "../styles/media";
 
 const Contact = () => {
   const newPageGithub = () => {
@@ -98,6 +99,12 @@ const ContactStyle = styled.div`
     letter-spacing: -0.5px;
     color: #ffffff;
   }
+  ${media.phoneM`
+    font-size:20px;
+    `}
+
+  ${media.tablet`
+    `}
 `;
 
 export default Contact;
