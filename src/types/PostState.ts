@@ -1,5 +1,6 @@
 export interface PostState {
   post_id: number;
+  image: string;
   category: string;
   title: string;
   content: string;

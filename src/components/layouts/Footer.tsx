@@ -27,15 +27,15 @@ const Footer = () => {
       <p>
         {isMobile ? (
           <>
-            Class가 시작된 저의 LOG는 개발자로서의 삶을 담고
-            <br />
-            앞으로 나아갈 수 있는 공간으로 만들어졌습니다.
-          </>
-        ) : (
-          <>
             Class가 시작된 저의 LOG는 개발자로서의
             <br />
             삶을 담고 앞으로 나아갈 수 있는 공간으로 만들어졌습니다.
+          </>
+        ) : (
+          <>
+            Class가 시작된 저의 LOG는 개발자로서의 삶을 담고
+            <br />
+            앞으로 나아갈 수 있는 공간으로 만들어졌습니다.
           </>
         )}
       </p>
@@ -56,8 +56,8 @@ const FooterStyle = styled.div`
   justify-content: space-between;
 
   p {
-    font-family: Pretendard;
-    font-weight: 300;
+    font-family: "Pretendard";
+    font-weight: 400;
     font-size: 14px;
     line-height: 160%;
     letter-spacing: -0.3px;

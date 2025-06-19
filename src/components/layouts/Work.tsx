@@ -1,7 +1,14 @@
 import styled from "styled-components";
 import { media } from "../styles/media";
+import React, { useState } from "react";
 
 const Work = () => {
+  const [activeCategory, setActiveCategory] = useState("all");
+
+  const handleCategoryClick = (category: string) => {
+    setActiveCategory(category);
+  };
+
   return (
     <WorkStyle>
       <p className="head">&lt; work</p>
@@ -11,16 +18,46 @@ const Work = () => {
         <br />
         Check out our various development tasks!
       </p>
-      <button className="all">all</button>
-      <button>front-end</button>
-      <button>back-end</button>
-      <button>full-stack</button>
+      <button
+        className={`all ${activeCategory === "all" ? "active" : ""}`}
+        onClick={() => handleCategoryClick("all")}
+      >
+        all
+      </button>
+      <button
+        className={`front-end ${
+          activeCategory === "front-end" ? "active" : ""
+        }`}
+        onClick={() => handleCategoryClick("front-end")}
+      >
+        front-end
+      </button>
+      <button
+        className={`back-end ${activeCategory === "back-end" ? "active" : ""}`}
+        onClick={() => handleCategoryClick("back-end")}
+      >
+        back-end
+      </button>
+      <button
+        className={`full-stack ${
+          activeCategory === "full-stack" ? "active" : ""
+        }`}
+        onClick={() => handleCategoryClick("full-stack")}
+      >
+        full-stack
+      </button>
       <BoardStyle>
-        <p>ㅇㅇㅇㅇ</p>
+        {/* 
+        {post.post_id}
+        <image>{post.image}</image>
+        <title>{post.title}</title>
+        <content>{post.content}</content>
+        <category>{post.category}</category>
+        <date>{post.date}</date> */}
       </BoardStyle>
-      {/* <p className="fe">&lt;front-end</p>
-      <p className="be">&lt;back-end</p>
-      <p className="fs">&lt;full-stack</p> */}
+      <BoardStyle></BoardStyle>
+      <BoardStyle></BoardStyle>
+      <BoardStyle></BoardStyle>
     </WorkStyle>
   );
 };
@@ -30,7 +67,7 @@ const WorkStyle = styled.div`
     color: #5398ff;
     margin-left: 480px;
     margin-top: 140px;
-    font-family: Pretendard;
+    font-family: "Pretendard";
     font-weight: 400;
     font-size: 16px;
     line-height: 160%;
@@ -40,7 +77,7 @@ const WorkStyle = styled.div`
   .about-work {
     margin-left: 480px;
     margin-top: 25px;
-    font-family: Pretendard;
+    font-family: "Pretendard";
     font-weight: 400;
     font-size: 16px;
     line-height: 160%;
@@ -64,7 +101,11 @@ const WorkStyle = styled.div`
     letter-spacing: -0.4px;
     text-align: center;
 
-    &: hover {
+    &:hover {
+      background-color: #ffffff;
+      color: #010104;
+    }
+    &.active {
       background-color: #ffffff;
       color: #010104;
     }
@@ -85,6 +126,10 @@ const WorkStyle = styled.div`
     text-align: center;
 
     &:hover {
+      background-color: #ffffff;
+      color: #010104;
+    }
+    &.active {
       background-color: #ffffff;
       color: #010104;
     }

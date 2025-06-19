@@ -43,11 +43,6 @@ const AboutStyle = styled.div`
 
   p {
     color: #ffffff;
-    font-family: Pretendard;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 160%;
-    letter-spacing: -0.5px;
   }
 
   .head {

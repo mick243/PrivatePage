@@ -35,18 +35,18 @@ const Main = () => {
         <p className="last-word">
           {isMobile ? (
             <>
-              The log where the class started was created as a space to contain
-              life
-              <br />
-              as a developer and move forward.
-            </>
-          ) : (
-            <>
               The log where the class started was created
               <br />
               as a space to contain life as a developer and
               <br />
               move forward.
+            </>
+          ) : (
+            <>
+              The log where the class started was created as a space to contain
+              life
+              <br />
+              as a developer and move forward.
             </>
           )}
         </p>
@@ -93,7 +93,7 @@ const MainStyle = styled.div`
     min-height: 50px;
     margin-top: 20px;
     font-family: Pretendard;
-    font-weight: 300;
+    font-weight: 200;
     font-size: 16px;
     line-height: 160%;
     letter-spacing: -0.5px;

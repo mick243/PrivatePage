@@ -4,7 +4,7 @@ type DeviceType = "tablet" | "phoneM" | "phoneL";
 
 const sizes: Record<DeviceType, string> = {
   tablet: `@media (max-width: 1024px) and (min-width: 601px)`,
-  phoneM: `@media (max-width: 475px) and (min-width: 375px)`,
+  phoneM: `@media (max-width: 375px)`,
   phoneL: `@media (max-width: 475px) and (min-width: 375px)`,
 };
 
