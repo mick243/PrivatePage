@@ -1,13 +1,33 @@
 import styled from "styled-components";
 import { media } from "../styles/media";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { httpClient } from "../../apis/http";
 
 const Work = () => {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [posts, setPosts] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await httpClient.get("/posts");
+        setPosts(response.data);
+      } catch (error) {
+        console.error("게시글을 불러오는 중 에러 발생:", error);
+      }
+    };
+
+    fetchPosts();
+  }, []);
 
   const handleCategoryClick = (category: string) => {
     setActiveCategory(category);
   };
+
+  const filteredPosts =
+    activeCategory === "all"
+      ? posts
+      : posts.filter((post) => post.category === activeCategory);
 
   return (
     <WorkStyle>
@@ -46,18 +66,17 @@ const Work = () => {
       >
         full-stack
       </button>
-      <BoardStyle>
-        {/* 
-        {post.post_id}
-        <image>{post.image}</image>
-        <title>{post.title}</title>
-        <content>{post.content}</content>
-        <category>{post.category}</category>
-        <date>{post.date}</date> */}
-      </BoardStyle>
-      <BoardStyle></BoardStyle>
-      <BoardStyle></BoardStyle>
-      <BoardStyle></BoardStyle>
+      {filteredPosts.map((post) => (
+        <BoardStyle key={post.post_id}>
+          <img src={post.image} alt={post.title} width="120" height="120" />
+          <div>
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
+            <p>{post.category}</p>
+            <p>{post.date}</p>
+          </div>
+        </BoardStyle>
+      ))}
     </WorkStyle>
   );
 };
