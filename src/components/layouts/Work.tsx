@@ -1,28 +1,28 @@
 import styled from "styled-components";
 import { media } from "../styles/media";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { httpClient } from "../../apis/http";
 
 const Work = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [posts, setPosts] = useState<any[]>([]);
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      try {
-        const response = await httpClient.get("/posts");
-        setPosts(response.data);
-      } catch (error) {
-        console.error("게시글을 불러오는 중 에러 발생:", error);
-      }
-    };
-
-    fetchPosts();
-  }, []);
-
   const handleCategoryClick = (category: string) => {
     setActiveCategory(category);
   };
+
+  const fetchPosts = async () => {
+    try {
+      const response = await httpClient.get("/post");
+      setPosts(response.data);
+    } catch (error) {
+      console.error("게시글 로드 실패:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchPosts();
+  }, []);
 
   const filteredPosts =
     activeCategory === "all"

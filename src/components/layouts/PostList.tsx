@@ -10,7 +10,7 @@ const PostList = ({ post }: Props) => {
 
   const handleTitleClick = (post_id: number) => {
     console.log(post_id);
-    navigate(`/posts/${post_id}`);
+    navigate(`/post/${post_id}`);
   };
 
   return (
