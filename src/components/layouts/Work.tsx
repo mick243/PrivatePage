@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { media } from "../styles/media";
 import { useEffect, useState } from "react";
 import { httpClient } from "../../apis/http";
+import PostList from "./PostList";
 
 const Work = () => {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -13,7 +14,7 @@ const Work = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await httpClient.get("/post");
+      const response = await httpClient.get(`/post`);
       setPosts(response.data);
     } catch (error) {
       console.error("게시글 로드 실패:", error);
@@ -68,13 +69,7 @@ const Work = () => {
       </button>
       {filteredPosts.map((post) => (
         <BoardStyle key={post.post_id}>
-          <img src={post.image} alt={post.title} width="120" height="120" />
-          <div>
-            <h3>{post.title}</h3>
-            <p>{post.content}</p>
-            <p>{post.category}</p>
-            <p>{post.date}</p>
-          </div>
+          <PostList post={[post]} />
         </BoardStyle>
       ))}
     </WorkStyle>
@@ -167,7 +162,6 @@ const WorkStyle = styled.div`
 const BoardStyle = styled.div`
   width: 960px;
   height: 210px;
-  border: 1px solid;
   margin-left: 480px;
 `;
 

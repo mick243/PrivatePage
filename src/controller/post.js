@@ -2,7 +2,7 @@ const conn = require("../mysql");
 
 const getAllPosts = (req, res) => {
   const query =
-    "SELECT post_id, title, content, created_at, images, category FROM board";
+    "SELECT post_id, category_id, title, content, images, created_at FROM post";
   conn.query(query, (err, results) => {
     if (err) {
       console.error(err);

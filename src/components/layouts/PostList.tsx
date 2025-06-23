@@ -18,6 +18,8 @@ const PostList = ({ post }: Props) => {
       {post.map((item) => (
         <p onClick={() => handleTitleClick(item.post_id)} key={item.post_id}>
           {item.title}
+          {item.content}
+          {item.created_at}
         </p>
       ))}
     </>

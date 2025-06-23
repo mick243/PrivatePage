@@ -1,14 +1,25 @@
 const express = require("express");
+const app = express();
+const cors = require("cors");
 const dotenv = require("dotenv");
 dotenv.config();
 
-const app = express();
-const port = 3000;
+const port = 8080;
 
 const postRouter = require("./routes/post.js");
 
-app.use("/posts", postRouter);
+app.use(cors());
+app.use(express.json());
+app.use("/post", postRouter);
 
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+process.on("uncaughtException", (err) => {
+  console.error("Unhandled Error:", err);
 });
+
+app
+  .listen(port, () => {
+    console.log(`Server running at http://localhost:${port}`);
+  })
+  .on("error", (err) => {
+    console.error("Server failed to start:", err);
+  });

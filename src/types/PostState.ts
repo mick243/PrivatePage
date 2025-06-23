@@ -1,7 +1,8 @@
 export interface PostState {
   post_id: number;
+  category_id: number;
+  category_name: string;
   image: string;
-  category: string;
   title: string;
   content: string;
   created_at: string;
