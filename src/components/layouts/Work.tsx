@@ -3,10 +3,11 @@ import { media } from "../styles/media";
 import { useEffect, useState } from "react";
 import { httpClient } from "../../apis/http";
 import PostList from "./PostList";
+import { PostState } from "../../types/PostState";
 
 const Work = () => {
   const [activeCategory, setActiveCategory] = useState("all");
-  const [posts, setPosts] = useState<any[]>([]);
+  const [posts, setPosts] = useState<PostState[]>([]);
 
   const handleCategoryClick = (category: string) => {
     setActiveCategory(category);
@@ -28,7 +29,7 @@ const Work = () => {
   const filteredPosts =
     activeCategory === "all"
       ? posts
-      : posts.filter((post) => post.category === activeCategory);
+      : posts.filter((post) => post.category_name === activeCategory);
 
   return (
     <WorkStyle>
@@ -39,38 +40,19 @@ const Work = () => {
         <br />
         Check out our various development tasks!
       </p>
-      <button
-        className={`all ${activeCategory === "all" ? "active" : ""}`}
-        onClick={() => handleCategoryClick("all")}
-      >
-        all
-      </button>
-      <button
-        className={`front-end ${
-          activeCategory === "front-end" ? "active" : ""
-        }`}
-        onClick={() => handleCategoryClick("front-end")}
-      >
-        front-end
-      </button>
-      <button
-        className={`back-end ${activeCategory === "back-end" ? "active" : ""}`}
-        onClick={() => handleCategoryClick("back-end")}
-      >
-        back-end
-      </button>
-      <button
-        className={`full-stack ${
-          activeCategory === "full-stack" ? "active" : ""
-        }`}
-        onClick={() => handleCategoryClick("full-stack")}
-      >
-        full-stack
-      </button>
+      {["all", "front-end", "back-end", "full-stack"].map((category) => (
+        <button
+          key={category}
+          className={`${category} ${
+            activeCategory === category ? "active" : ""
+          }`}
+          onClick={() => handleCategoryClick(category)}
+        >
+          {category}
+        </button>
+      ))}
       {filteredPosts.map((post) => (
-        <BoardStyle key={post.post_id}>
-          <PostList post={[post]} />
-        </BoardStyle>
+        <PostList key={post.post_id} post={post} />
       ))}
     </WorkStyle>
   );
@@ -127,6 +109,7 @@ const WorkStyle = styled.div`
   button {
     width: 97px;
     height: 45px;
+    margin-left: 15px;
     border-radius: 40px;
     color: #ffffff;
     border: 1px solid #494f60;
@@ -158,11 +141,6 @@ const WorkStyle = styled.div`
 
   ${media.tablet`
     `}
-`;
-const BoardStyle = styled.div`
-  width: 960px;
-  height: 210px;
-  margin-left: 480px;
 `;
 
 export default Work;

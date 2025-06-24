@@ -99,6 +99,16 @@ const ContactStyle = styled.div`
     letter-spacing: -0.5px;
     color: #ffffff;
   }
+
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+  }
   ${media.phoneM`
     font-size:20px;
     `}
