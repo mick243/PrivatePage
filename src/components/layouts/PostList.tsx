@@ -5,6 +5,9 @@ import styled from "styled-components";
 interface Props {
   post: PostState;
 }
+interface ImageProps {
+  imageUrl: string;
+}
 
 const PostList = ({ post }: Props) => {
   const navigate = useNavigate();
@@ -14,13 +17,28 @@ const PostList = ({ post }: Props) => {
     navigate(`/post/${post_id}`);
   };
 
+  const getCategoryColor = (category: string): string => {
+    switch (category) {
+      case "front-end":
+        return "#FF4ED9";
+      case "back-end":
+        return "#52FF77";
+      case "full-stack":
+        return "#25D0FF";
+      default:
+        return "#ffffff";
+    }
+  };
+
   return (
     <PostCard>
-      <ImagePlaceholder />
+      <ImagePlaceholder imageUrl={post.image} />
       <PostContent>
-        <Category>&lt;{post.category_name}</Category>
+        <Category color={getCategoryColor(post.category_name)}>
+          &lt;{post.category_name}
+        </Category>
         <Title>{post.title}</Title>
-        <Description>{post.content?.slice(0, 20)}</Description>
+        <Content>{post.content?.slice(0, 100)}</Content>
       </PostContent>
       <Meta>
         <Date>{post.created_at?.slice(0, 10)}</Date>
@@ -38,52 +56,69 @@ const PostCard = styled.div`
   align-items: center;
   width: 960px;
   height: 210px;
-  margin-left: 480px;
+  margin: 0;
+  margin-left: 500px;
   margin-top: 45px;
+  margin-bottom: -20px;
   background-color: transparent;
-  padding: 20px;
   box-sizing: border-box;
+  cursor: pointer;
 `;
 
-const ImagePlaceholder = styled.div`
+const ImagePlaceholder = styled.div<ImageProps>`
   width: 350px;
   height: 210px;
+  margin-left: -20px;
   background-color: #121216;
   border-radius: 8px;
+  background-image: url(${(props) => props.imageUrl});
+  background-size: cover;
+  background-position: center;
 `;
 
 const PostContent = styled.div`
-  flex-grow: 1;
-  margin-left: 40px;
+  width: 760px;
+  margin-left: -300px;
 `;
 
-const Category = styled.div`
-  color: #ff4ed9;
-  width: 74px;
+const Category = styled.div<{ color: string }>`
+  color: ${(props) => props.color};
+  width: 76px;
+  margin-left: 320px;
   font-family: Pretendard;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
   justify-content: space-between;
 `;
 
 const Title = styled.h2`
   color: white;
+  margin-left: 320px;
   font-family: Pretendard;
   font-weight: 700;
   font-size: 28px;
   line-height: 160%;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.3px;
   cursor: pointer;
 `;
 
-const Description = styled.p`
+const Content = styled.p`
   color: white;
+  width: 456px;
+  margin-left: 320px;
   margin-top: 8px;
+  font-family: Pretendard;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: -0.3px;
 `;
 
 const Meta = styled.div`
+  width: 100px;
+  margin-left: 20px;
   text-align: right;
 `;
 
@@ -91,8 +126,7 @@ const Date = styled.p`
   color: white;
   width: 150px;
   text-align: right;
-  margin-right: -45px;
-  margin-left: 200px;
+  margin-left: -70px;
   margin-top: -5px;
   justify-content: space-between;
 `;
@@ -106,7 +140,8 @@ const Button = styled.div`
   border: 1px solid white;
   font-size: 20px;
   cursor: pointer;
-  margin-left: 305px;
+  margin-left: 40px;
   margin-top: 85px;
   justify-content: space-between;
+  background-image: url("/images/Group 1321315055.png");
 `;

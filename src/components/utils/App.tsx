@@ -6,6 +6,7 @@ import About from "../layouts/About";
 import Work from "../layouts/Work";
 import Contact from "../layouts/Contact";
 import Article from "../layouts/Article";
+import Post from "../layouts/Post";
 
 const routeList = [
   {
@@ -27,6 +28,10 @@ const routeList = [
   {
     path: "/Article",
     element: <Article />,
+  },
+  {
+    path: "/Post", // ✅ 추가
+    element: <Post />,
   },
 ];
 

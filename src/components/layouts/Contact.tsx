@@ -105,9 +105,10 @@ const ContactStyle = styled.div`
     height: 40px;
     border-radius: 50%;
     background: transparent;
-    color: white;
+    color: #ffffff;
     border: 1px solid white;
     cursor: pointer;
+    background-image: url("/images/Group 1321315055.png");
   }
   ${media.phoneM`
     font-size:20px;

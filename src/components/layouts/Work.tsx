@@ -67,7 +67,7 @@ const WorkStyle = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 160%;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.3px;
   }
 
   .about-work {
