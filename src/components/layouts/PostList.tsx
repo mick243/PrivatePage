@@ -42,7 +42,7 @@ const PostList = ({ post }: Props) => {
       </PostContent>
       <Meta>
         <Date>{post.created_at?.slice(0, 10)}</Date>
-        <Button></Button>
+        <Button onClick={() => handleClick}></Button>
       </Meta>
     </PostCard>
   );

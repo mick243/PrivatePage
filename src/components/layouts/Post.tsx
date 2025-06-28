@@ -5,29 +5,27 @@ import PostList from "./PostList";
 import { httpClient } from "../../apis/http";
 import styled from "styled-components";
 
-const Post = () => {
-  const [posts, setPosts] = useState<PostState[]>([]);
+interface Props {
+  post: PostState;
+}
 
+const Post = ({ post }: Props) => {
+  const [posts, setPosts] = useState<PostState[]>([]);
   // 게시글 불러오기
-  const fetchPosts = async () => {
+  const fetchPosts = async (post_id: number) => {
     try {
-      const response = await httpClient.get("/post");
+      const response = await httpClient.get(`/post/${post_id}`);
       setPosts(response.data);
     } catch (error) {
       console.error("게시글 로드 실패:", error);
     }
   };
 
-  useEffect(() => {
-    fetchPosts();
-  }, []);
-
   return (
     <>
       <PostWrapper>
-        {posts.map((post) => (
-          <PostList key={post.post_id} post={post} />
-        ))}
+        <Title>{post.title}</Title>
+        <Content>{post.content}</Content>
       </PostWrapper>
     </>
   );
@@ -36,3 +34,7 @@ const Post = () => {
 export default Post;
 
 const PostWrapper = styled.div``;
+
+const Title = styled.div``;
+
+const Content = styled.div``;
