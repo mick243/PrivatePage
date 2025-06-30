@@ -30,7 +30,7 @@ const routeList = [
     element: <Article />,
   },
   {
-    path: "/Post", // ✅ 추가
+    path: "/post/:post_id",
     element: <Post />,
   },
 ];

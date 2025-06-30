@@ -12,9 +12,8 @@ interface ImageProps {
 const PostList = ({ post }: Props) => {
   const navigate = useNavigate();
 
-  const handleClick = (post_id: number) => {
-    console.log(post_id);
-    navigate(`/post/${post_id}`);
+  const handleClick = () => {
+    navigate(`/post/${post.post_id}`);
   };
 
   const getCategoryColor = (category: string): string => {
@@ -32,7 +31,7 @@ const PostList = ({ post }: Props) => {
 
   return (
     <PostCard>
-      <ImagePlaceholder imageUrl={post.image} />
+      <ImagePlaceholder imageUrl={post.images} />
       <PostContent>
         <Category color={getCategoryColor(post.category_name)}>
           &lt;{post.category_name}
@@ -42,7 +41,7 @@ const PostList = ({ post }: Props) => {
       </PostContent>
       <Meta>
         <Date>{post.created_at?.slice(0, 10)}</Date>
-        <Button onClick={() => handleClick}></Button>
+        <Button onClick={handleClick}></Button>
       </Meta>
     </PostCard>
   );
