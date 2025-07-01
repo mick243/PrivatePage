@@ -12,10 +12,6 @@ app.use(cors());
 app.use(express.json());
 app.use("/post", postRouter);
 
-process.on("uncaughtException", (err) => {
-  console.error("Unhandled Error:", err);
-});
-
 app
   .listen(port, () => {
     console.log(`Server running at http://localhost:${port}`);
