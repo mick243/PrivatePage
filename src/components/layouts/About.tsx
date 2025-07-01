@@ -26,10 +26,6 @@ const About = () => {
           className="js-logo"
           src="/logos/478d85330087acd75c9ffa664f61071c-ezgif.com-resize.png"
         />
-        <img
-          className="react-logo"
-          src="/logos/73b62ecb842808ecfc6d021f07c34414-ezgif.com-resize.png"
-        />
       </p>
       <footer className="footer">
         <p>Data has been created since 2025.</p>

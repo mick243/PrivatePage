@@ -61,7 +61,6 @@ const PostCard = styled.div`
   margin-bottom: -20px;
   background-color: transparent;
   box-sizing: border-box;
-  cursor: pointer;
 `;
 
 const ImagePlaceholder = styled.div<ImageProps>`
@@ -100,7 +99,6 @@ const Title = styled.h2`
   font-size: 28px;
   line-height: 160%;
   letter-spacing: -0.3px;
-  cursor: pointer;
 `;
 
 const Content = styled.p`
