@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { PostState } from "../../types/PostState";
+import { getCategoryColor } from "../styles/CategoryColor";
 import styled from "styled-components";
 
 interface Props {
@@ -14,19 +15,6 @@ const PostList = ({ post }: Props) => {
 
   const handleClick = () => {
     navigate(`/post/${post.post_id}`);
-  };
-
-  const getCategoryColor = (category: string): string => {
-    switch (category) {
-      case "front-end":
-        return "#FF4ED9";
-      case "back-end":
-        return "#52FF77";
-      case "full-stack":
-        return "#25D0FF";
-      default:
-        return "#ffffff";
-    }
   };
 
   return (

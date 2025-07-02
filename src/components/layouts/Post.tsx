@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { PostState } from "../../types/PostState";
+import { getCategoryColor } from "../styles/CategoryColor";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { getPostById } from "../../apis/Posts";
@@ -25,19 +26,6 @@ const Post = () => {
     }
   }, [post_id]);
 
-  const getCategoryColor = (category: string): string => {
-    switch (category) {
-      case "front-end":
-        return "#FF4ED9";
-      case "back-end":
-        return "#52FF77";
-      case "full-stack":
-        return "#25D0FF";
-      default:
-        return "#ffffff";
-    }
-  };
-
   if (!post) {
     return <div>Loading...</div>;
   }
@@ -45,10 +33,12 @@ const Post = () => {
   return (
     <>
       <PostWrapper>
-        <Category color={getCategoryColor(post.category_name)}>
-          &lt;{post.category_name}
-        </Category>
-        <Date>{post.created_at?.slice(0, 10)}</Date>
+        <HeaderRow>
+          <Category color={getCategoryColor(post.category_name)}>
+            &lt;{post.category_name}
+          </Category>
+          <Date>{post.created_at?.slice(0, 10)}</Date>
+        </HeaderRow>
         <Title>{post.title}</Title>
         <Content>{post.content}</Content>
         <Image imageUrl={post.images}></Image>
@@ -59,12 +49,24 @@ const Post = () => {
 
 export default Post;
 
-const PostWrapper = styled.div``;
+const PostWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+`;
+
+const HeaderRow = styled.div`
+  display: flex;
+  width: 960px;
+  padding-top: 100px;
+  padding-left: 480px;
+  align-items: center;
+  column-gap: 15px;
+`;
 
 const Category = styled.div<{ color: string }>`
   color: ${(props) => props.color};
   width: 76px;
-  padding-left: 480px;
   font-family: Pretendard;
   font-weight: 400;
   font-size: 16px;
@@ -87,6 +89,7 @@ const Content = styled.div`
   color: white;
   font-family: Pretendard;
   margin-left: 480px;
+  padding-top: 20px;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
@@ -97,7 +100,7 @@ const Date = styled.p`
   color: white;
   width: 82px;
   height: 26px;
-  text-align: right;
+  margin-left: auto;
   justify-content: space-between;
 `;
 
