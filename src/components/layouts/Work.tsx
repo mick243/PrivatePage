@@ -8,6 +8,19 @@ import { PostState } from "../../types/PostState";
 const Work = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [posts, setPosts] = useState<PostState[]>([]);
+  const [isMobile, setIsMobile] = useState<boolean>(
+    () => window.innerWidth <= 600
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    handleResize(); // 초기 설정
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const handleCategoryClick = (category: string) => {
     setActiveCategory(category);
@@ -35,22 +48,36 @@ const Work = () => {
     <WorkStyle>
       <p className="head">&lt; work</p>
       <p className="about-work">
-        We carry out various development tasks including front-end, back-end,
-        and full-stack
-        <br />
-        Check out our various development tasks!
+        {isMobile ? (
+          <>
+            We carry out various development tasks
+            <br />
+            including front-end, back-end, and full-stack.
+            <br />
+            Check out our various development tasks!
+          </>
+        ) : (
+          <>
+            We carry out various development tasks including front-end,
+            back-end, and full-stack
+            <br />
+            Check out our various development tasks!
+          </>
+        )}
       </p>
-      {["all", "front-end", "back-end", "full-stack"].map((category) => (
-        <button
-          key={category}
-          className={`${category} ${
-            activeCategory === category ? "active" : ""
-          }`}
-          onClick={() => handleCategoryClick(category)}
-        >
-          {category}
-        </button>
-      ))}
+      <div className="button-group">
+        {["all", "front-end", "back-end", "full-stack"].map((category) => (
+          <button
+            key={category}
+            className={`${category} ${
+              activeCategory === category ? "active" : ""
+            }`}
+            onClick={() => handleCategoryClick(category)}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
       {filteredPosts.map((post) => (
         <PostList key={post.post_id} post={post} />
       ))}
@@ -137,6 +164,40 @@ const WorkStyle = styled.div`
   }
 
   ${media.phoneM`
+    .head {
+      color: #5398ff;
+      margin-left: 24px;
+      margin-top: 20px;
+      font-family: "Pretendard";
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 160%;
+      letter-spacing: -0.3px;
+    }
+
+    .about-work {
+      margin: 0 auto;
+      padding-left:24px;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .button-group {
+      justify-content: center;
+    }
+    
+    .all {
+      margin-left: 24px;
+      margin-top: 40px;
+      width : 44px;
+    }
+       
+    button {
+      width: 85px;
+      font-size: 14px;
+      height: 40px;
+      margin-left: 8px;
+      }
     `}
 
   ${media.tablet`

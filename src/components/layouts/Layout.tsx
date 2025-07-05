@@ -30,23 +30,19 @@ const BackgroundVideo = styled.video`
   filter: blur(8px);
   z-index: -1;
 
-  @media (max-width: 375px) {
-    width: 375px;
-    object-fit: cover;
-    filter: blur(8px);
-    z-index: -1;
-  }
+  ${media.phoneM`
+      width: 375px;
+      left: 0;
+      top: 0px;
+      object-fit: cover;
+      filter: blur(8px);
+      z-index: -1;
+    `}
 `;
 
 const ContentWrapper = styled.div`
   position: relative;
   z-index: 1;
-
-  ${media.phoneM`
-    `}
-
-  ${media.tablet`
-    `}
 `;
 
 export default Layout;

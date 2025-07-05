@@ -1,8 +1,22 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { media } from "../styles/media";
+import { useEffect, useState } from "react";
 
 const Header = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(
+    () => window.innerWidth <= 600
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    handleResize(); // 초기 설정
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const navigate = useNavigate();
 
   const handleLogoClick = () => {
@@ -28,28 +42,32 @@ const Header = () => {
         <p className="logo" onClick={handleLogoClick}>
           &lt; LOG
         </p>
-        <ul className="menu">
-          <li>
-            <p className="about" onClick={handleAboutClick}>
-              About
-            </p>
-          </li>
-          <li>
-            <p className="work" onClick={handleWorkClick}>
-              Work
-            </p>
-          </li>
-          <li>
-            <p className="article" onClick={handleArticleClick}>
-              Article
-            </p>
-          </li>
-          <li>
-            <p className="contact" onClick={handleContactClick}>
-              Contact
-            </p>
-          </li>
-        </ul>
+        {isMobile ? (
+          ""
+        ) : (
+          <ul className="menu">
+            <li>
+              <p className="about" onClick={handleAboutClick}>
+                About
+              </p>
+            </li>
+            <li>
+              <p className="work" onClick={handleWorkClick}>
+                Work
+              </p>
+            </li>
+            <li>
+              <p className="article" onClick={handleArticleClick}>
+                Article
+              </p>
+            </li>
+            <li>
+              <p className="contact" onClick={handleContactClick}>
+                Contact
+              </p>
+            </li>
+          </ul>
+        )}
       </div>
     </HeaderStyle>
   );
