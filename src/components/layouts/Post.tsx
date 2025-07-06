@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PostState } from "../../types/PostState";
 import { getCategoryColor } from "../styles/CategoryColor";
 import styled from "styled-components";
@@ -40,7 +40,14 @@ const Post = () => {
           <Date>{post.created_at?.slice(0, 10)}</Date>
         </HeaderRow>
         <Title>{post.title}</Title>
-        <Content>{post.content}</Content>
+        <Content>
+          {post.content.split("<br>").map((line, idx) => (
+            <React.Fragment key={idx}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+        </Content>
         <Image imageUrl={post.images}></Image>
       </PostWrapper>
     </>
@@ -88,12 +95,15 @@ const Title = styled.div`
 const Content = styled.div`
   color: white;
   font-family: Pretendard;
+  width: 960px;
   margin-left: 480px;
   padding-top: 20px;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
   letter-spacing: -0.5px;
+  white-space: pre-wrap;
+  word-break: break-word;
 `;
 
 const Date = styled.p`

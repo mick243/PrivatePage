@@ -25,7 +25,7 @@ const PostList = ({ post }: Props) => {
           &lt;{post.category_name}
         </Category>
         <Title>{post.title}</Title>
-        <Content>{post.content?.slice(0, 100)}</Content>
+        <Content>{post.content?.slice(0, 40)} ...</Content>
       </PostContent>
       <Meta>
         <Date>{post.created_at?.slice(0, 10)}</Date>
