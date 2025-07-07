@@ -35,18 +35,16 @@ const Main = () => {
         <p className="last-word">
           {isMobile ? (
             <>
-              The log where the class started was created
-              <br />
-              as a space to contain life as a developer and
-              <br />
-              move forward.
-            </>
-          ) : (
-            <>
               The log where the class started was created as a space to contain
               life
               <br />
               as a developer and move forward.
+            </>
+          ) : (
+            <>
+              The log where the class started was created <br />
+              as a space to contain life as a developer and <br />
+              move forward.
             </>
           )}
         </p>
@@ -129,12 +127,13 @@ const MainStyle = styled.div`
   }
 
   ${media.phoneM`
-    min-width: 375px;
+    width: 375px;
     max-height: 667px;
     margin-left: 24px;
 
     .home {
       left: 0px;
+      margin-top: -40px;
     }
 
     .top-bar {

@@ -43,7 +43,7 @@ const Header = () => {
           &lt; LOG
         </p>
         {isMobile ? (
-          ""
+          <></>
         ) : (
           <ul className="menu">
             <li>
@@ -91,6 +91,10 @@ const HeaderStyle = styled.div`
     line-height: 160%;
     letter-spacing: -0.5px;
     color: #ffffff;
+
+    ${media.phoneM`
+      margin-top: 60px;  
+    `}
   }
 
   .menu {
@@ -139,12 +143,12 @@ const HeaderStyle = styled.div`
 
   ${media.phoneM`
     width: 327px;
+    height:50px;
     margin-left: 24px;
 
     .menu li {
       display: none;
     }
-
     `}
 
   ${media.tablet`

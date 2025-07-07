@@ -2,6 +2,8 @@ import { useNavigate } from "react-router-dom";
 import { PostState } from "../../types/PostState";
 import { getCategoryColor } from "../styles/CategoryColor";
 import styled from "styled-components";
+import { media } from "../styles/media";
+import { useEffect, useState } from "react";
 
 interface Props {
   post: PostState;
@@ -11,6 +13,20 @@ interface ImageProps {
 }
 
 const PostList = ({ post }: Props) => {
+  const [isMobile, setIsMobile] = useState<boolean>(
+    () => window.innerWidth <= 600
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    handleResize(); // 초기 설정
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -25,7 +41,11 @@ const PostList = ({ post }: Props) => {
           &lt;{post.category_name}
         </Category>
         <Title>{post.title}</Title>
-        <Content>{post.content?.slice(0, 40)} ...</Content>
+        {isMobile ? (
+          <Content>{post.content?.slice(0, 25)} ...</Content>
+        ) : (
+          <Content>{post.content?.slice(0, 40)} ...</Content>
+        )}
       </PostContent>
       <Meta>
         <Date>{post.created_at?.slice(0, 10)}</Date>
@@ -49,6 +69,13 @@ const PostCard = styled.div`
   margin-bottom: -20px;
   background-color: transparent;
   box-sizing: border-box;
+
+  ${media.phoneM`
+      flex-direction: column;
+      width:327px;
+      height: auto;
+      margin-left: 40px;
+    `}
 `;
 
 const ImagePlaceholder = styled.div<ImageProps>`
@@ -60,11 +87,22 @@ const ImagePlaceholder = styled.div<ImageProps>`
   background-image: url(${(props) => props.imageUrl});
   background-size: cover;
   background-position: center;
+
+  ${media.phoneM`
+      width:327px;
+      margin-left: -30px;
+    `}
 `;
 
 const PostContent = styled.div`
   width: 760px;
   margin-left: -300px;
+
+  ${media.phoneM`
+    width: 375px;
+    margin-left: 40px;
+    margin-left: -300px;
+  `}
 `;
 
 const Category = styled.div<{ color: string }>`
@@ -77,6 +115,11 @@ const Category = styled.div<{ color: string }>`
   line-height: 160%;
   letter-spacing: -0.3px;
   justify-content: space-between;
+
+  ${media.phoneM`
+    margin-left: 160px;
+    padding-top: 15px;
+  `}
 `;
 
 const Title = styled.h2`
@@ -87,6 +130,18 @@ const Title = styled.h2`
   font-size: 28px;
   line-height: 160%;
   letter-spacing: -0.3px;
+
+  ${media.phoneM`
+    width:327px;
+    margin-left: 160px;
+    font-family: Pretendard;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 20px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: -0.5px;
+    `}
 `;
 
 const Content = styled.p`
@@ -99,6 +154,11 @@ const Content = styled.p`
   font-size: 16px;
   line-height: 160%;
   letter-spacing: -0.3px;
+
+  ${media.phoneM`
+    width : 275px;
+    margin-left: 160px;
+  `}
 `;
 
 const Meta = styled.div`

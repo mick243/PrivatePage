@@ -40,6 +40,7 @@ const Post = () => {
           <Date>{post.created_at?.slice(0, 10)}</Date>
         </HeaderRow>
         <Title>{post.title}</Title>
+        <Image imageUrl={post.images}></Image>
         <Content>
           {post.content.split("<br>").map((line, idx) => (
             <React.Fragment key={idx}>
@@ -48,7 +49,6 @@ const Post = () => {
             </React.Fragment>
           ))}
         </Content>
-        <Image imageUrl={post.images}></Image>
       </PostWrapper>
     </>
   );

@@ -54,7 +54,16 @@ const FooterStyle = styled.div`
     justify-content: space-between;
   }
   ${media.phoneM`
-    `}
+    width: 327px;
+    margin-left: 5px;
+    margin-top: 100px;
+  
+    .copyright {
+      text-align: left;
+      margin-left: 0;
+      margin-top: 40px;
+    }
+  `}
 
   ${media.tablet`
     `}

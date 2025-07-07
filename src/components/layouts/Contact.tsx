@@ -109,10 +109,64 @@ const ContactStyle = styled.div`
     border: 1px solid white;
     cursor: pointer;
     background-image: url("/images/Group 1321315055.png");
+    background-size: cover;
+    background-position: center;
   }
   ${media.phoneM`
-    font-size:20px;
-    `}
+    .head {
+      margin-left: 5px;
+      margin-top: 60px;
+    }
+
+    .head-word {
+      margin-left: 5px;
+    }
+
+    .bar {
+      width: 327px;
+      margin-left: 5px;
+    }
+
+    .adress {
+      margin-left: 5px;
+      font-family: Pretendard;
+      font-weight: 700;
+      font-style: Bold;
+      font-size: 24px;
+      leading-trim: NONE;
+      line-height: 140%;
+      letter-spacing: -0.5px;
+    }
+
+    .github {
+      align-self: flex-end;
+      margin-left: 10px;
+      justify-content: space-between;
+    }
+
+     button {
+      width: 28px;
+      height: 28px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .last-word1 {
+      margin-left: 5px;
+      width:318px;
+      font-family: Pretendard;
+      font-weight: 400;
+      font-style: Regular;
+      font-size: 16px;
+      leading-trim: NONE;
+      line-height: 160%;
+      letter-spacing: -0.5px;
+    }
+
+    .last-word2 {
+      margin-left: 5px;
+    }
+  `}
 
   ${media.tablet`
     `}
