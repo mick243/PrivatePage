@@ -37,9 +37,12 @@ const PostList = ({ post }: Props) => {
     <PostCard>
       <ImagePlaceholder imageUrl={post.images} />
       <PostContent>
-        <Category color={getCategoryColor(post.category_name)}>
-          &lt;{post.category_name}
-        </Category>
+        <HeaderRow>
+          <Category color={getCategoryColor(post.category_name)}>
+            &lt;{post.category_name}
+          </Category>
+          <Date>{post.created_at?.slice(0, 10)}</Date>
+        </HeaderRow>
         <Title>{post.title}</Title>
         {isMobile ? (
           <Content>{post.content?.slice(0, 25)} ...</Content>
@@ -48,7 +51,6 @@ const PostList = ({ post }: Props) => {
         )}
       </PostContent>
       <Meta>
-        <Date>{post.created_at?.slice(0, 10)}</Date>
         <Button onClick={handleClick}></Button>
       </Meta>
     </PostCard>
@@ -104,17 +106,29 @@ const PostContent = styled.div`
     margin-left: -300px;
   `}
 `;
+const HeaderRow = styled.div`
+  display: flex;
+  margin-left: 30px;
+  height: 40px;
+
+  ${media.phoneM`
+    margin-left: 0;
+    justify-content: space-between;
+  `}
+`;
 
 const Category = styled.div<{ color: string }>`
   color: ${(props) => props.color};
   width: 76px;
-  margin-left: 320px;
+  margin-left: 290px;
+  padding-top: 15px;
   font-family: Pretendard;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
   letter-spacing: -0.3px;
   justify-content: space-between;
+  white-space: nowrap;
 
   ${media.phoneM`
     margin-left: 160px;
@@ -171,9 +185,14 @@ const Date = styled.p`
   color: white;
   width: 150px;
   text-align: right;
-  margin-left: -70px;
-  margin-top: -5px;
+  margin-left: 410px;
   justify-content: space-between;
+  white-space: nowrap;
+
+  ${media.phoneM`
+    margin-left: 170px;
+    justify-content: space-between;
+  `}
 `;
 
 const Button = styled.div`

@@ -21,7 +21,7 @@ const Layout = ({ children }: LayoutProps) => {
 };
 
 const BackgroundVideo = styled.video`
-  position: absolute;
+  position: fixed;
   top: 215px;
   left: -79px;
   width: 1865px;
@@ -31,6 +31,7 @@ const BackgroundVideo = styled.video`
   z-index: -1;
 
   ${media.phoneM`
+      position: fixed;
       width: 375px;
       left: 0;
       top: 0px;

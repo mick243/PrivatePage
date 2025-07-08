@@ -25,10 +25,10 @@ const routeList = [
     path: "/Contact",
     element: <Contact />,
   },
-  {
-    path: "/Article",
-    element: <Article />,
-  },
+  // {
+  //   path: "/Article",
+  //   element: <Article />,
+  // },
   {
     path: "/post/:post_id",
     element: <Post />,

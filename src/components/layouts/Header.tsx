@@ -56,11 +56,11 @@ const Header = () => {
                 Work
               </p>
             </li>
-            <li>
+            {/* <li>
               <p className="article" onClick={handleArticleClick}>
                 Article
               </p>
-            </li>
+            </li> */}
             <li>
               <p className="contact" onClick={handleContactClick}>
                 Contact
@@ -101,6 +101,7 @@ const HeaderStyle = styled.div`
     width: 301px;
     height: 26px;
     margin-left: auto;
+    margin-right: -85px;
     margin-top: -55px;
     font-family: Pretendard;
     font-weight: 500;
