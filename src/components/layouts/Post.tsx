@@ -48,6 +48,7 @@ const Post = () => {
               <br />
             </React.Fragment>
           ))}
+          <SubTitle>{post.sub_title}</SubTitle>
         </Content>
       </PostWrapper>
     </>
@@ -104,6 +105,17 @@ const Content = styled.div`
   letter-spacing: -0.5px;
   white-space: pre-wrap;
   word-break: break-word;
+`;
+
+const SubTitle = styled.div`
+  color: white;
+  font-family: Pretendard;
+  width: 960px;
+  padding-top: 20px;
+  font-size: 27px;
+  font-weight: 1000;
+  line-height: 160%;
+  letter-spacing: -0.5px;
 `;
 
 const Date = styled.p`

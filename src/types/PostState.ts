@@ -4,6 +4,7 @@ export interface PostState {
   images: string;
   title: string;
   content: string;
+  sub_title: string;
   created_at: string;
 }
 
