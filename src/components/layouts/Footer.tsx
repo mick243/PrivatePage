@@ -80,6 +80,7 @@ const FooterStyle = styled.div`
   }
   ${media.phoneM`
     width: 327px;
+    margin-top: -150px;
     margin-left: 24px;
 
     p {

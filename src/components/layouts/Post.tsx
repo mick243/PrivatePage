@@ -4,6 +4,7 @@ import { getCategoryColor } from "../styles/CategoryColor";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 import { getPostById } from "../../apis/Posts";
+import { media } from "../styles/media";
 
 interface ImageProps {
   imageUrl: string;
@@ -48,7 +49,7 @@ const Post = () => {
               <br />
             </React.Fragment>
           ))}
-          <SubTitle>{post.sub_title}</SubTitle>
+          {/* <SubTitle>{post.sub_title}</SubTitle> */}
         </Content>
       </PostWrapper>
     </>
@@ -70,6 +71,12 @@ const HeaderRow = styled.div`
   padding-left: 480px;
   align-items: center;
   column-gap: 15px;
+
+  ${media.phoneM`
+      width: 327px;
+      padding-top: 40px;
+      padding-left: 24px;
+      `}
 `;
 
 const Category = styled.div<{ color: string }>`
@@ -91,6 +98,20 @@ const Title = styled.div`
   font-size: 40px;
   line-height: 160%;
   letter-spacing: -0.3px;
+
+  ${media.phoneM`
+    width: 327px;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-left: 24px;
+    font-family: Pretendard;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 24px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: -0.5px;
+  `}
 `;
 
 const Content = styled.div`
@@ -99,24 +120,39 @@ const Content = styled.div`
   width: 960px;
   margin-left: 480px;
   padding-top: 20px;
+  padding-bottom: 65px;
   font-weight: 400;
   font-size: 16px;
   line-height: 160%;
   letter-spacing: -0.5px;
   white-space: pre-wrap;
   word-break: break-word;
+
+  ${media.phoneM`
+    width: 327px;
+    margin-left: 0px;
+    padding-top: 0px;
+    padding-left: 24px;
+    font-family: Pretendard;
+    font-weight: 400;
+    font-style: Regular;
+    font-size: 14px;
+    leading-trim: NONE;
+    line-height: 160%;
+    letter-spacing: -0.5px;
+  `}
 `;
 
-const SubTitle = styled.div`
-  color: white;
-  font-family: Pretendard;
-  width: 960px;
-  padding-top: 20px;
-  font-size: 27px;
-  font-weight: 1000;
-  line-height: 160%;
-  letter-spacing: -0.5px;
-`;
+// const SubTitle = styled.div`
+//   color: white;
+//   font-family: Pretendard;
+//   width: 960px;
+//   padding-top: 20px;
+//   font-size: 27px;
+//   font-weight: 1000;
+//   line-height: 160%;
+//   letter-spacing: -0.5px;
+// `;
 
 const Date = styled.p`
   color: white;
@@ -133,4 +169,11 @@ const Image = styled.div<ImageProps>`
   background-image: url(${(props) => props.imageUrl});
   background-size: cover;
   background-position: center;
+
+  ${media.phoneM`
+    width: 300px;
+    height: 327px;
+    margin-left: 24px;
+    padding-left: 24px;
+  `}
 `;

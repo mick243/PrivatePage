@@ -35,16 +35,16 @@ const Main = () => {
         <p className="last-word">
           {isMobile ? (
             <>
+              The log where the class started was created <br />
+              as a space to contain life as a developer and <br />
+              move forward.
+            </>
+          ) : (
+            <>
               The log where the class started was created as a space to contain
               life
               <br />
               as a developer and move forward.
-            </>
-          ) : (
-            <>
-              The log where the class started was created <br />
-              as a space to contain life as a developer and <br />
-              move forward.
             </>
           )}
         </p>
@@ -87,7 +87,7 @@ const MainStyle = styled.div`
   }
 
   .last-word {
-    min-width: 375px;
+    width: 470px;
     min-height: 50px;
     margin-top: 20px;
     font-family: Pretendard;
@@ -113,7 +113,7 @@ const MainStyle = styled.div`
   }
 
   .main-title {
-    min-width: 697px;
+    width: 697px;
     height: 134px;
     margin-left: 100px;
     margin-top: 0px;
@@ -127,7 +127,7 @@ const MainStyle = styled.div`
   }
 
   ${media.phoneM`
-    width: 375px;
+    max-width: 375px;
     max-height: 667px;
     margin-left: 24px;
 
@@ -145,7 +145,7 @@ const MainStyle = styled.div`
     }
 
     .main-title {
-      width: 229ox;
+      width: 225px;
       height: 90px;
       margin-left: 40px;
       margin-top: 50px;
@@ -157,6 +157,7 @@ const MainStyle = styled.div`
     }
     
     .last-word {
+      width: 300px;
       margin-top: 25px;
       white-space: pre-line;
     }
@@ -179,8 +180,11 @@ const BackgroundVideo = styled.video`
   z-index: -1;
 
   ${media.phoneM`
-    width: 600px;
-    left: -160px;
+    position: fixed;
+    width: 375px;
+    height: 812px;
+    top: 150px;
+    left: 0px;
   `}
 
   ${media.tablet`

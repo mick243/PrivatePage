@@ -81,6 +81,10 @@ const HeaderStyle = styled.div`
   justify-content: space-between;
   border-bottom: 1px solid #2f333a;
 
+  ${media.phoneM`
+    width: 327px;
+  `}
+
   .logo {
     width: 50px;
     cursor: pointer;
