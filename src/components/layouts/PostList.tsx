@@ -3,7 +3,7 @@ import { PostState } from "../../types/PostState";
 import { getCategoryColor } from "../styles/CategoryColor";
 import styled from "styled-components";
 import { media } from "../styles/media";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 interface Props {
   post: PostState;
@@ -45,9 +45,31 @@ const PostList = ({ post }: Props) => {
         </HeaderRow>
         <Title>{post.title}</Title>
         {isMobile ? (
-          <Content>{post.content?.slice(0, 25)} ...</Content>
+          <Content>
+            {post.content
+              ?.slice(0, 25)
+              .split("<br>")
+              .map((line, idx) => (
+                <React.Fragment key={idx}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}{" "}
+            ...
+          </Content>
         ) : (
-          <Content>{post.content?.slice(0, 40)} ...</Content>
+          <Content>
+            {post.content
+              ?.slice(0, 45)
+              .split("<br>")
+              .map((line, idx) => (
+                <React.Fragment key={idx}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}{" "}
+            ...
+          </Content>
         )}
       </PostContent>
       <Meta>

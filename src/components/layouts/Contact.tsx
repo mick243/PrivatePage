@@ -23,7 +23,7 @@ const Contact = () => {
       </p>
       <hr className="bar"></hr>
       <p className="last-word1">
-        This is a spacr to create and store new records of life as a developer.
+        This is a space to create and store new records of life as a developer.
         <br />
         The beginning of new class.
       </p>
@@ -34,7 +34,6 @@ const Contact = () => {
 };
 
 const ContactStyle = styled.div`
-  min-width: 1920px;
   margin: 0 auto;
   padding: 0 20px;
 
@@ -113,12 +112,15 @@ const ContactStyle = styled.div`
     background-position: center;
   }
   ${media.phoneM`
+    width: 340px;
+
     .head {
       margin-left: 5px;
       margin-top: 60px;
     }
 
     .head-word {
+      width: 320px;
       margin-left: 5px;
     }
 
@@ -128,6 +130,7 @@ const ContactStyle = styled.div`
     }
 
     .adress {
+      width: 330px;
       margin-left: 5px;
       font-family: Pretendard;
       font-weight: 700;
@@ -153,7 +156,7 @@ const ContactStyle = styled.div`
 
     .last-word1 {
       margin-left: 5px;
-      width:318px;
+      width: 318px;
       font-family: Pretendard;
       font-weight: 400;
       font-style: Regular;
@@ -164,6 +167,7 @@ const ContactStyle = styled.div`
     }
 
     .last-word2 {
+      width: 318px;
       margin-left: 5px;
     }
   `}

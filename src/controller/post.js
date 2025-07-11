@@ -1,7 +1,7 @@
 const conn = require("../mysql");
 
 const getAllPosts = (req, res) => {
-  const query = "SELECT * FROM post ORDER BY post_id DESC;";
+  const query = "SELECT * FROM posts ORDER BY post_id DESC;";
   conn.query(query, (err, results) => {
     if (err) {
       console.error(err);
@@ -14,7 +14,7 @@ const getAllPosts = (req, res) => {
 
 const getPostById = (req, res) => {
   const post_id = req.params.post_id;
-  const query = "SELECT * FROM post WHERE post_id = ?";
+  const query = "SELECT * FROM posts WHERE post_id = ?";
 
   conn.query(query, [post_id], (err, results) => {
     if (err) {

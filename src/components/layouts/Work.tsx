@@ -28,7 +28,7 @@ const Work = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await httpClient.get(`/post`);
+      const response = await httpClient.get(`/posts`);
       setPosts(response.data);
     } catch (error) {
       console.error("게시글 로드 실패:", error);

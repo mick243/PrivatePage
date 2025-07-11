@@ -3,7 +3,7 @@ import { httpClient } from "./http";
 
 export const getPosts = async (post_id: number) => {
   try {
-    const response = await httpClient.get<PostState[]>(`/post`);
+    const response = await httpClient.get<PostState[]>(`/posts`);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -12,6 +12,6 @@ export const getPosts = async (post_id: number) => {
 };
 
 export const getPostById = async (post_id: number) => {
-  const response = await httpClient.get<PostState>(`/post/${post_id}`);
+  const response = await httpClient.get<PostState>(`/posts/${post_id}`);
   return response.data;
 };

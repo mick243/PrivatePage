@@ -10,7 +10,7 @@ const postRouter = require("./routes/post.js");
 
 app.use(cors());
 app.use(express.json());
-app.use("/post", postRouter);
+app.use("/posts", postRouter);
 
 app
   .listen(port, () => {
