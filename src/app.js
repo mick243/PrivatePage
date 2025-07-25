@@ -6,6 +6,14 @@ dotenv.config();
 
 const port = 8080;
 
+// const PORT = process.env.PORT || 8080;
+// const HOST = process.env.HOST || "0.0.0.0";
+//app.listen(PORT, HOST, () => {
+//   console.log(`Server running at http://${HOST}:${PORT}`);
+// });
+
+// .env 파일 설정하기
+
 const postRouter = require("./routes/post.js");
 
 app.use(cors());

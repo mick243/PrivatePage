@@ -29,9 +29,9 @@ const Header = () => {
   const handleWorkClick = () => {
     navigate("/Work");
   };
-  const handleArticleClick = () => {
-    navigate("/Article");
-  };
+  // const handleArticleClick = () => {
+  //   navigate("/Article");
+  // };
   const handleContactClick = () => {
     navigate("/Contact");
   };
